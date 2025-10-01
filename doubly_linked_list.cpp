@@ -32,8 +32,19 @@ public:
 
     // Insert at the end
     void append(int val) {
+        Node* newNode = new Node(val);
 
+        if (head == nullptr) { // if list is empty
+            head = newNode;
+            tail = newNode;
+            return;
+        }
+
+        tail->next = newNode;
+        newNode->prev = tail;
+        tail = newNode;
     }
+
 
     // Insert at the front
     void prepend(int val) {
