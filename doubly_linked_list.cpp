@@ -27,7 +27,24 @@ public:
 
     // Insert at the end
     void displayAll() {
+		if (this->head == nullptr) {
+			cout << "No head for this doubly linked list." << endl;
+			return;
+		}
 
+		Node* current = this->head;
+		for (;;) {
+			cout << current->data;
+			current = current->next;
+
+			if (current == nullptr) {
+				break;
+			} else {
+				cout << " <-> ";
+			}
+		}
+
+		cout << endl;
     }
 
     // Insert at the end
